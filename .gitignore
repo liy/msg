@@ -11,8 +11,8 @@
 /db/*.sqlite3
 
 # Ignore all logfiles and tempfiles.
-/log/*.log
-/tmp
+/log/*
+/tmp/*
 
 # Ignore other unneeded files.
 doc/
@@ -27,3 +27,18 @@ uploads/
 
 # redis dump file
 dump.rdb
+
+
+# other files...
+*.rbc
+*.sassc
+.sass-cache
+capybara-*.html
+.rspec
+/vendor/bundle
+/public/system/*
+/coverage/
+/spec/tmp/*
+**.orig
+rerun.txt
+pickle-email-*.html
