@@ -1,7 +1,7 @@
 class CreateEntries < ActiveRecord::Migration
   def change
     create_table :entries do |t|
-      t.string :content, :limit => nil
+      t.text :content, :limit => nil
 
       t.string :base64_id
 

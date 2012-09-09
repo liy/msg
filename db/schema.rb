@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(:version => 20120906193455) do
 
   create_table "entries", :force => true do |t|
-    t.string   "content"
+    t.text     "content"
     t.string   "base64_id"
     t.string   "password"
     t.datetime "created_at", :null => false
