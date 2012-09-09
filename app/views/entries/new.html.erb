@@ -1,0 +1,6 @@
+
+<%= form_for @entry do |f| %>
+	<%= f.text_area :content, :class => "span12", :id => :content, :rows => 3, :cols => 200, :placeholder => "Type here..." %>
+	<span class="help-block">URL will be assigned to the piece of the text after you pressing the <span class="label">Publish</span> button.</span>
+	<%= f.submit :Publish, :class => "btn" %>
+<% end %>

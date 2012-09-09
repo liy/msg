@@ -1,0 +1,12 @@
+<blockquote>
+	<%= content_paragraphs %>
+	<small class="pull-right">author <cite title="Source Title"><%= @entry.created_at.to_s %></cite></small>
+</blockquote>
+<p class="muted">
+	<% @shortUrlPairs.each do |name, url| %>
+		<small>
+			<%= raw clippy url %><%= url %>
+		</small>
+		<br>
+	<% end %>
+</p>

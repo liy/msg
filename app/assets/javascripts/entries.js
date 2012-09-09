@@ -1,0 +1,3 @@
+$(function(){
+	$("#content").autoResize().focus();
+});
