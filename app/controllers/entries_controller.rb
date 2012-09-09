@@ -11,8 +11,6 @@ class EntriesController < ApplicationController
 		full_url = entry_url(@entry.base64_id)
 
 		@shortUrlPairs = Hash.new
-		@shortUrlPairs["bitly"] = "http://bit.ly/xxx"
-		@shortUrlPairs["google"] = "http://goo.gl/xxx"
 
 		# bitly shorten
 		bitly = Shortly::Clients::Bitly
@@ -30,6 +28,11 @@ class EntriesController < ApplicationController
 		struct = googl.shorten(full_url)
 		if struct.nil?
 			@shortUrlPairs["google"] = struct.shortUrl
+		end
+
+		if @shortUrlPairs.empty?
+			@shortUrlPairs["bitly"] = "http://bit.ly/xxx"
+			@shortUrlPairs["google"] = "http://goo.gl/xxx"
 		end
 	end
 
