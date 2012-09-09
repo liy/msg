@@ -15,25 +15,26 @@ class EntriesController < ApplicationController
 		# bitly shorten
 		bitly = Shortly::Clients::Bitly
 		bitly.login = 'liydaxia'
-		bitly.apiKey = 'R_d5da1c26625c8788c18a990d53dbb138'
+		bitly.apiKey = 'R_77dc8a24a4f47cc030319f942e346b1c'
 		struct = bitly.shorten(full_url)
-
-		if struct.nil?
+		if !struct.nil?
 			@shortUrlPairs["bitly"] = struct.url
 		end
 
 		# google shorten
 		googl = Shortly::Clients::Googl
-		googl.apiKey = 'AIzaSyBZ4ADOoubitYXHYcrRPKXU6NHpXed0RSM'
-		struct = googl.shorten(full_url)
-		if struct.nil?
+		# I didn't setup the billing, so cannot use api key
+		# googl.apiKey = 'xxx'
+		struct = googl.shorten full_url
+		if !struct.nil?
 			@shortUrlPairs["google"] = struct.shortUrl
 		end
 
-		# if @shortUrlPairs.empty?
-		# 	@shortUrlPairs["bitly"] = "http://bit.ly/xxx"
-		# 	@shortUrlPairs["google"] = "http://goo.gl/xxx"
-		# end
+		tinyurl = Shortly::Clients::Tinyurl
+		struct = tinyurl.shorten full_url
+		if !struct.nil?
+			@shortUrlPairs["tinyurl"] = struct.shorturl
+		end
 	end
 
 	def new

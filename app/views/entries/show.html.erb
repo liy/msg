@@ -1,6 +1,6 @@
 <blockquote>
 	<%= content_paragraphs %>
-	<small class="pull-right">author <cite title="Source Title"><%= @entry.created_at.to_s %></cite></small>
+	<small class="pull-right"><%= @entry.created_at.to_s %></small>
 </blockquote>
 <p class="muted">
 	<% @shortUrlPairs.each do |name, url| %>
