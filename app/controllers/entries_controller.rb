@@ -30,10 +30,10 @@ class EntriesController < ApplicationController
 			@shortUrlPairs["google"] = struct.shortUrl
 		end
 
-		if @shortUrlPairs.empty?
-			@shortUrlPairs["bitly"] = "http://bit.ly/xxx"
-			@shortUrlPairs["google"] = "http://goo.gl/xxx"
-		end
+		# if @shortUrlPairs.empty?
+		# 	@shortUrlPairs["bitly"] = "http://bit.ly/xxx"
+		# 	@shortUrlPairs["google"] = "http://goo.gl/xxx"
+		# end
 	end
 
 	def new
