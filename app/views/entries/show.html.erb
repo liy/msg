@@ -1,12 +1,19 @@
-<blockquote>
-	<%= content_paragraphs %>
-	<small class="pull-right"><%= @entry.created_at.to_s %></small>
-</blockquote>
-<p class="muted">
-	<% @shortUrlPairs.each do |name, url| %>
-		<small>
-			<%= raw clippy url %><%= url %>
-		</small>
-		<br>
-	<% end %>
-</p>
+<div class="container-fluid">
+	<div class="row-fluid">
+		<div class="span10">
+			<blockquote>
+				<%= content_paragraphs %>
+			</blockquote>
+		</div>
+		<div class="span2">
+			<p class="muted affix">
+				<% @shortUrlPairs.each do |name, url| %>
+					<small>
+						<%= raw clippy url %><%= url %>
+					</small>
+					<br>
+				<% end %>
+			</p>
+		</div>
+	</div>
+</div>
