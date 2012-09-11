@@ -4,7 +4,7 @@ Msg::Application.routes.draw do
   put 'entries/:id', :to => 'entries#new'
   delete 'entries/:id', :to => 'entries#new'
 
-  resources :entries
+  resources :entries, shallow: true
   root :to => 'entries#new'
 
   # The priority is based upon order of creation:

@@ -1,19 +1,18 @@
-<div class="container-fluid">
-	<div class="row-fluid">
-		<div class="span10">
-			<blockquote>
-				<%= content_paragraphs %>
-			</blockquote>
-		</div>
-		<div class="span2">
-			<p class="muted affix">
-				<% @shortUrlPairs.each do |name, url| %>
-					<small>
-						<%= raw clippy url %><%= url %>
-					</small>
-					<br>
-				<% end %>
-			</p>
-		</div>
+
+<div class="row-fluid">
+	<div class="span10">
+		<!-- <blockquote id="show-content"> -->
+			<%= markdown @entry.content %>
+		<!-- </blockquote> -->
+	</div>
+	<div class="span2">
+		<p class="muted affix">
+			<% @shortUrlPairs.each do |name, url| %>
+				<small>
+					<%= raw clippy url %><%= url %>
+				</small>
+				<br>
+			<% end %>
+		</p>
 	</div>
 </div>
