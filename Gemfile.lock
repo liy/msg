@@ -78,8 +78,8 @@ GEM
     multi_xml (0.5.1)
     pg (0.14.1)
     polyglot (0.3.3)
-    pygments.rb (0.2.13)
-      rubypython (~> 0.5.3)
+    pygments.rb (0.2.3)
+      rubypython (>= 0.5.1)
     rack (1.4.1)
     rack-cache (1.2)
       rack (>= 0.4)
@@ -107,7 +107,7 @@ GEM
       json (~> 1.4)
     redcarpet (2.1.1)
     redis (3.0.1)
-    rubypython (0.5.3)
+    rubypython (0.5.1)
       blankslate (>= 2.1.2.3)
       ffi (~> 1.0.7)
     sass (3.2.1)
@@ -142,10 +142,11 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   jquery-rails
   pg
-  pygments.rb
+  pygments.rb (= 0.2.3)
   rails (= 3.2.8)
-  redcarpet
+  redcarpet (~> 2.1.1)
   redis (~> 3.0.1)
+  rubypython (= 0.5.1)
   sass-rails (~> 3.2.3)
   shortly
   sqlite3

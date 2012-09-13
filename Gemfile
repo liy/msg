@@ -34,10 +34,9 @@ gem 'shortly'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
-# For syntax highlighting
-gem 'pygments.rb'
-# For markdown process
-gem 'redcarpet'
+gem "redcarpet", "~> 2.1.1"  
+gem "pygments.rb", '0.2.3'  
+gem "rubypython", "0.5.1" 
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
