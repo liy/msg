@@ -5,6 +5,7 @@ $(function(){
     	editorDoc = editorFrame.contentDocument;
 		editorDoc.body.setAttribute("id", "editor-body");
 		editorDoc.body.setAttribute("ContentEditable", "true");
+		editorDoc.body.setAttribute("style", 'font-family: "Helvetica Neue", Helvetica, Arial, sans-serif')
 		// editorFrame.contentDocument.body.designMode = "On";
 		editorDoc.designMode = "On";
 		// editorFrame.height = "600px";
