@@ -1,8 +1,8 @@
-<%= form_for @entry do |f| %>
-	<%= f.text_area :content, :class => "span12", :id => :content, :rows => 3, :cols => 200, :placeholder => "Type here..." %>
-	<span class="help-block">A URL will be assigned to the piece of the text after you pressing the <span class="label">Publish</span> button, shortcut: <span class="label">⌘ + enter</span> <span class="label">ctrl + enter</span>.</span>
-	<%= f.submit :Publish, :class => "btn" %>
+<iframe class="editor-frame">
+</iframe>
+<br/>
+<%= form_for @entry, :class => "form-inline" do |f| %>
+	<%= f.text_area :content, :style =>"display:none;" %>
+	<%= f.submit :Publish, :id => "submit-text-btn", :class => "btn" %>
+	<span class="label">⌘ + enter</span> <span class="label">ctrl + enter</span>
 <% end %>
-
-<div id="editable-div" ContentEditable="true">
-</div>

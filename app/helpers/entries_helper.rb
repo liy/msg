@@ -1,20 +1,22 @@
 module EntriesHelper
-	class HTMLPygments < Redcarpet::Render::HTML
-		# override the redcapet's method to provide extra syntax highlight
-		def block_code(code, language)
-			Pygments.highlight(code, lexer: language)
-		end
-	end
+	# class HTMLPygments < Redcarpet::Render::HTML
+	# 	# override the redcapet's method to provide extra syntax highlight
+	# 	def block_code(code, language)
+	# 		Pygments.highlight(code, lexer: language)
+	# 	end
+	# end
 
 	def markdown(text)
-		renderer = HTMLPygments.new(hard_wrap: true, filter_html: true)
+		# renderer = HTMLPygments.new(hard_wrap: true, filter_html: true)
+		renderer = Redcarpet::Render::HTML.new(hard_wrap: true, filter_html: true)
 		options = {
 			autolink: true,
 			no_intra_emphasis: true,
 			fenced_code_blocks: true,
 			lax_html_blocks: true,
 			strikethrough: true,
-			superscript: true
+			superscript: true,
+			tables: true
 		}
 
 		Redcarpet::Markdown.new(renderer, options).render(text).html_safe

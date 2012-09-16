@@ -34,9 +34,8 @@ gem 'shortly'
 
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 
-gem "redcarpet", "~> 2.1.1"  
-gem "pygments.rb", '0.2.3'  
-gem "rubypython", "0.5.1" 
+gem "redcarpet"
+gem "pygments.rb"
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
