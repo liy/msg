@@ -6,8 +6,13 @@ blockquote p {
 }
 
 body {
+	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
 	padding-top: 60px;
 	padding-bottom: 60px;
+}
+
+.content-view {
+	text-indent: 2em;
 }
 
 /*
@@ -20,7 +25,6 @@ body {
 }
 
 .CodeMirror {
-	outline: 1px solid #CCC;
-	border-style: none;
+	border: 1px solid #eee;
 	margin-bottom: 10px;
 }
