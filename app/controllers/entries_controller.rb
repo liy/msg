@@ -12,29 +12,29 @@ class EntriesController < ApplicationController
 
 		@shortUrlPairs = Hash.new
 
-		# # bitly shorten
-		# bitly = Shortly::Clients::Bitly
-		# bitly.login = 'liydaxia'
-		# bitly.apiKey = 'R_77dc8a24a4f47cc030319f942e346b1c'
-		# struct = bitly.shorten(full_url)
-		# if !struct.nil?
-		# 	@shortUrlPairs["bitly"] = struct.url
-		# end
+		# bitly shorten
+		bitly = Shortly::Clients::Bitly
+		bitly.login = 'liydaxia'
+		bitly.apiKey = 'R_77dc8a24a4f47cc030319f942e346b1c'
+		struct = bitly.shorten(full_url)
+		if !struct.nil?
+			@shortUrlPairs["bitly"] = struct.url
+		end
 
-		# # google shorten
-		# googl = Shortly::Clients::Googl
-		# # I didn't setup the billing, so cannot use api key
-		# # googl.apiKey = 'xxx'
-		# struct = googl.shorten full_url
-		# if !struct.nil?
-		# 	@shortUrlPairs["google"] = struct.shortUrl
-		# end
+		# google shorten
+		googl = Shortly::Clients::Googl
+		# I didn't setup the billing, so cannot use api key
+		# googl.apiKey = 'xxx'
+		struct = googl.shorten full_url
+		if !struct.nil?
+			@shortUrlPairs["google"] = struct.shortUrl
+		end
 
-		# tinyurl = Shortly::Clients::Tinyurl
-		# struct = tinyurl.shorten full_url
-		# if !struct.nil?
-		# 	@shortUrlPairs["tinyurl"] = struct.shorturl
-		# end
+		tinyurl = Shortly::Clients::Tinyurl
+		struct = tinyurl.shorten full_url
+		if !struct.nil?
+			@shortUrlPairs["tinyurl"] = struct.shorturl
+		end
 	end
 
 	def new
