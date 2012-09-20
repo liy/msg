@@ -15,6 +15,7 @@ class EntriesController < ApplicationController
 		# bitly shorten
 		bitly = Shortly::Clients::Bitly
 		bitly.login = 'liydaxia'
+		# TODO: the api key should be an env variable.
 		bitly.apiKey = 'R_77dc8a24a4f47cc030319f942e346b1c'
 		struct = bitly.shorten(full_url)
 		if !struct.nil?

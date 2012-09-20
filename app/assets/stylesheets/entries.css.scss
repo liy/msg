@@ -24,6 +24,11 @@ body {
   overflow-x: auto;
 }
 
+.CodeMirror-scroll div {
+	/* This line stop text editor flicking while typing, seems like there is a conflict in min-height */
+	padding-bottom: 0.1em;
+}
+
 .CodeMirror {
 	border: 1px solid #eee;
 	margin-bottom: 10px;
