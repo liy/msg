@@ -12,24 +12,39 @@ body {
 }
 
 .content-view {
-	text-indent: 2em;
+	
 }
 
 /*
  * auto resize the codemirror editor.
  */
-.CodeMirror-scroll {
-  height: auto;
-  overflow-y: hidden;
-  overflow-x: auto;
-}
-
-.CodeMirror-scroll div {
-	/* This line stop text editor flicking while typing, seems like there is a conflict in min-height */
-	padding-bottom: 0.1em;
-}
-
 .CodeMirror {
 	border: 1px solid #eee;
-	margin-bottom: 10px;
+	height: auto;
+}
+
+.CodeMirror-scroll {
+	overflow-y: hidden;
+	overflow-x: auto;
+}
+
+.cm-header { 
+	font-size: 120%; 
+	font-family: arial; 
+}
+
+.cm-strong { 
+	font-weight: bold;
+}
+
+.cm-link {
+
+}
+
+.cm-string {
+
+}
+
+.cm-comment {
+	
 }

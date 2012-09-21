@@ -11,3 +11,60 @@
  *= require_self
  *= require_tree .
  */
+
+.container {
+	margin: auto;
+	width: 50%;
+}
+
+
+.row-fluid {
+}
+
+/*
+
+*/
+.span9 {
+	width: 90%;
+	float: left;
+}
+
+.span8 {
+	width: 80%;
+	float: left;
+}
+
+.span7 {
+	width: 70%;
+	float: left;
+}
+
+.span6 {
+	width: 60%;
+	float: left;
+}
+
+.span5 {
+	width: 50%;
+	float: left;
+}
+
+.span4 {
+	width: 40%;
+	float: left;
+}
+
+.span3 {
+	width: 30%;
+	float: left;
+}
+
+.span2 {
+	width: 20%;
+	float: left;
+}
+
+.span1 {
+	width: 10%;
+	float: left;
+}

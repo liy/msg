@@ -32,8 +32,6 @@ gem 'redis', "~> 3.0.1"
 
 gem 'shortly'
 
-gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
-
 gem "redcarpet"
 # gem "pygments.rb"
 
