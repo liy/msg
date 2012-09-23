@@ -1,17 +1,18 @@
 <div class="row-fluid">
-<div class="span10">
-	<%= form_for @entry, :class => "form-inline" do |f| %>
-		<%= f.text_area :content %>
-		<%= f.submit :Publish, :id => "submit-text-btn", :class => "btn" %>
-		<span class="label">⌘ + enter</span> <span class="label">ctrl + enter</span>
-	<% end %>
+	<div class="text-container span10">
+		<%= form_for @entry, :class => "form-inline" do |f| %>
+			<%= f.text_area :content %>
+			<hr />
+			<%= f.submit :Publish, :id => "submit-text-btn", :class => "btn" %>
+			<span class="label">⌘ + enter</span> <span class="label">ctrl + enter</span>
+		<% end %>
+	</div>
+	<!-- tools -->
+	<!-- <div class="span2">
+		<ul class="nav affix">
+			<li class="nav-header">Tools</li>
+			<li><a href="#" type="button" class="btn">Publish</a></li>
+			<li class="active"><a href="#">Help</a></li>
+		</ul>
+	</div>-->
 </div>
-<!-- tools -->
-<!-- <div class="span2">
-	<ul class="nav affix">
-		<li class="nav-header">Tools</li>
-		<li><a href="#" type="button" class="btn">Publish</a></li>
-		<li class="active"><a href="#">Help</a></li>
-	</ul>
-</div>
- --></div>

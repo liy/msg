@@ -6,13 +6,16 @@ $(function(){
 	// 	lineWrapping: true
 	// });
 
-	// create codemirror editor
-	var codemirror = CodeMirror.fromTextArea(document.getElementById("entry_content"), {
-		// mode: "markdown",
-		theme: "default",
-		lineWrapping: true,
-		autofocus: true,
-		// shortcut keys for msg app
-		keyMap: "msg"
-	});
+	var entry_content = document.getElementById("entry_content");
+	if(entry_content){
+		// create codemirror editor
+		var codemirror = CodeMirror.fromTextArea(entry_content, {
+			mode: "markdown",
+			theme: "default",
+			lineWrapping: true,
+			autofocus: true,
+			// shortcut keys for msg app
+			keyMap: "msg"
+		});
+	}
 });

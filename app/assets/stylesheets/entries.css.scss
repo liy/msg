@@ -1,25 +1,28 @@
 // Place all the styles related to the entries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-blockquote p {
-	margin-bottom: 20px;
-}
 
 body {
-	font-family: "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
-	padding-top: 60px;
-	padding-bottom: 60px;
+	margin-top: 60px;
 }
 
-.content-view {
-	
+.sidebar {
+	left: 5px;
+}
+
+.sidebar object {
+	padding-bottom: 2px;
+}
+
+.text-container {
+	padding-bottom: 60px;
 }
 
 /*
  * auto resize the codemirror editor.
  */
 .CodeMirror {
-	border: 1px solid #eee;
+	/*border: 1px solid #eee;*/
 	height: auto;
 }
 
@@ -31,6 +34,7 @@ body {
 .cm-header { 
 	font-size: 120%; 
 	font-family: arial; 
+	color: #525252 !important;
 }
 
 .cm-strong { 
@@ -38,13 +42,25 @@ body {
 }
 
 .cm-link {
-
+	color: #C7865B !important;
 }
 
 .cm-string {
-
+	color: #885184 !important;
 }
 
 .cm-comment {
-	
+	color: #4287B4 !important;
+}
+
+.cm-quote {
+	color: #FF9B9B !important;
+}
+
+.cm-error {
+	background-color: rgba(236, 160, 160, 0.46) !important;
+}
+
+.cm-em {
+	/*color: #CCC;*/
 }
