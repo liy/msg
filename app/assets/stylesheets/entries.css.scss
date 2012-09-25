@@ -24,6 +24,8 @@ body {
 .CodeMirror {
 	/*border: 1px solid #eee;*/
 	height: auto;
+	line-height: 125%;
+
 }
 
 .CodeMirror-scroll {
@@ -33,7 +35,6 @@ body {
 
 .cm-header { 
 	font-size: 120%; 
-	font-family: arial; 
 	color: #525252 !important;
 }
 
