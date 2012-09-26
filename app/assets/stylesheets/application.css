@@ -96,6 +96,14 @@ pre {
 	color: #777;
 }
 
+/* there are code in the paragraph*/
+p code {
+	border: 1px solid #EEE;
+	background-color: #FAFAFA;
+	padding: 2px 4px;
+	color: #777;
+}
+
 h1, h2, h3, h4, h5, h6 {
 	color: #000;
 	/*font-family: "宋体", sans-serif, Georgia;*/
