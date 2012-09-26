@@ -17,5 +17,13 @@ $(function(){
 			// shortcut keys for msg app
 			keyMap: "msg"
 		});
+
+		var currentLine = codemirror.setLineClass(0, "activeLine");
+		codemirror.on("cursorActivity", function(){
+			codemirror.setLineClass(currentLine, null, null);
+			currentLine = codemirror.setLineClass(codemirror.getCursor().line, null, "activeLine");
+		});
 	}
+	
+
 });

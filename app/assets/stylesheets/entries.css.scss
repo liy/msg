@@ -25,12 +25,17 @@ body {
 	/*border: 1px solid #eee;*/
 	height: auto;
 	line-height: 130%;
-
+	font-family: "Source Sans Pro";
+	font-size: 16px;
 }
 
 .CodeMirror-scroll {
 	overflow-y: hidden;
 	overflow-x: auto;
+}
+
+.activeLine {
+	background: #e8f2ff !important;
 }
 
 .cm-header { 
