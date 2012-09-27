@@ -1,5 +1,6 @@
 class Entry < ActiveRecord::Base
-  attr_accessible :content
+	# use uuid as primary key
+	include Extensions::UUID
 
-  has_many :links
+	attr_accessible :content
 end

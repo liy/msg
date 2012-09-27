@@ -1,11 +1,4 @@
 $(function(){
-	var editorFrame = document.getElementById("editor-frame");
-	// var codemirror = CodeMirror(editorFrame, {
-	// 	mode: "markdown",
-	// 	theme: "default",
-	// 	lineWrapping: true
-	// });
-
 	var entry_content = document.getElementById("entry_content");
 	if(entry_content){
 		// create codemirror editor
@@ -24,6 +17,7 @@ $(function(){
 			currentLine = codemirror.setLineClass(codemirror.getCursor().line, null, "activeLine");
 		});
 	}
+	
 	
 
 });

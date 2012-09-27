@@ -1,9 +1,14 @@
 <div class="row-fluid">
-	<div class="text-container span8">
+	<div class="text-container span7">
 		<%= markdown @entry.content %>
 	</div>
 	<div class="sidebar span2">
 		<p class="muted affix">
+			<% if @is_owner %>
+				<%= link_to :edit, edit_entry_path, :class => 'btn' %>
+				<%= link_to :delete, @entry, method: :delete, :class => 'btn btn-danger', data: {confirm: "Delete the entry?"} %>
+			<% end %>
+			<br>
 			<% @shortUrlPairs.each do |name, url| %>
 				<small>
 					<%= raw clippy url %><%= url %>

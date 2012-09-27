@@ -1,0 +1,6 @@
+<%= form_for @entry, :html => {:id => "codemirror"} do |f| %>
+	<%= f.text_area :content %>
+	<hr />
+	<%= f.submit btn_name, :id => "submit-text-btn", :class => "btn" %>
+	<span class="label">⌘ + enter</span> <span class="label">ctrl + enter</span>
+<% end %>

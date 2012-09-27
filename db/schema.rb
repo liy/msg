@@ -11,19 +11,12 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120906193455) do
+ActiveRecord::Schema.define(:version => 20120927142015) do
 
-  create_table "entries", :force => true do |t|
+  create_table "entries", :id => false, :force => true do |t|
+    t.string   "uuid"
     t.text     "content"
-    t.string   "base64_id"
     t.string   "password"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
-  end
-
-  create_table "links", :force => true do |t|
-    t.string   "uri"
-    t.integer  "entry_id"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

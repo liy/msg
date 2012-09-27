@@ -1,10 +1,10 @@
 // setup shortcuts
 CodeMirror.keyMap.msg = {
 	"Ctrl-Enter": function(cm) {
-		$("#new_entry").submit();
+		$("#codemirror").submit();
 	},
 	"Cmd-Enter": function(cm) {
-		$("#new_entry").submit();
+		$("#codemirror").submit();
 	},
 	fallthrough: ["default"] // defer keyMaps to default
 };

@@ -1,10 +1,8 @@
 Msg::Application.routes.draw do
+  # all entries direct to new entry
   get 'entries', :to => 'entries#new'
-  get 'entries/:id/edit', :to => 'entries#new'
-  put 'entries/:id', :to => 'entries#new'
-  delete 'entries/:id', :to => 'entries#new'
 
-  resources :entries, shallow: true
+  resources :entries
   root :to => 'entries#new'
 
   # The priority is based upon order of creation:

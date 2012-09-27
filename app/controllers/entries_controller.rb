@@ -6,9 +6,9 @@ class EntriesController < ApplicationController
 	end
 
 	def show
-		@entry = Entry.find_by_base64_id(params[:id])
+		@entry = Entry.find(params[:id])
 
-		full_url = entry_url(@entry.base64_id)
+		full_url = entry_url(@entry.id)
 
 		@shortUrlPairs = Hash.new
 
@@ -36,6 +36,9 @@ class EntriesController < ApplicationController
 		if !struct.nil?
 			@shortUrlPairs["tinyurl"] = struct.shorturl
 		end
+
+		# whether to show the edit button
+		@is_owner = is_owner(@entry)
 	end
 
 	def new
@@ -50,31 +53,58 @@ class EntriesController < ApplicationController
 			return
 		end
 
-		base64 = SecureRandom.urlsafe_base64(5)
-		while Entry.find_by_base64_id(base64)
-			base64 = SecureRandom.urlsafe_base64(5)
-		end
-		@entry.base64_id = base64;
-
+		# set password
+		@entry.password = "0000"
+		
 		if @entry.save
-		      redirect_to entry_path(@entry.base64_id), :flash => {:success => "Successfully created entry"}
+			# update the password cookie
+			cookies.permanent[@entry.id] = @entry.password
+
+		    redirect_to entry_path(@entry.id), :flash => {:success => "Successfully created entry"}
 		else
 			render 'new', :flash => { :error => @entry.errors.full_messages }
 		end
 	end
 
 	def edit
-		
+		@entry = Entry.find(params[:id])
+
+		# if password is set
+		ps = params[:password]
+		if ps == @entry.password
+			# render edit view
+		else
+			# if the user is not is_owner to edit the entry
+			if !is_owner(@entry)
+				# cannot edit the entry, create new entry
+				redirect_to new_entry_path
+			end
+		end
 	end
 
 	def update
+		@entry = Entry.find(params[:id])
 		
+		if @entry.update_attributes(params[:entry])
+			flash[:success] = 'Update sucessfully'
+			redirect_to @entry
+		else
+			flash[:error] = 'Update railed'
+			render 'edit'
+		end
 	end
 
 	def destroy
 		@entry = Entry.find(params[:id])
 		@entry.destroy
 		flash[:info] = "Successfully removed entry"
-	    redirect_to entrys_path
+	    redirect_to new_entry_path
 	end
+
+private
+	
+	def is_owner(entry)
+		cookies[entry.id] != nil && cookies[entry.id] == entry.password
+	end
+
 end
